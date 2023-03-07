@@ -1,0 +1,24 @@
+{%extends 'uhome.html'%}
+{%block userhome%}
+
+<h2 class="bg-transparent text-dark text-center">My Cart</h2><br><br>
+
+
+    <div class="row">
+        {%for i in data%}
+          <div class="card-bg-transparent" style="width:400px">
+            <img class="card-img-top" width="250" src="{{i.product.select_image.url}}" alt="product-images">
+            <div class="card-body-bg-transparent">
+              <h4 class="card-title"><b>Product Name</b> : {{i.product.product_name}}</h4>
+              <p class="text"><b>Product ID</b> : {{i.product.id}}</p>
+              <div class="card-content"><b>Details</b> : {{i.product.short_description}}</div>
+              <div class="text"><b>Price</b> : {{i.product.price}}</div>
+              <div class="text"><b>Added Date</b> : {{i.date}}</div>
+              <div class="card-footer"><a href="{% url 'ordrcart' i.id %}" class="btn btn-success">Place Order</a></div>
+              
+            </div> 
+          </div> 
+        {%endfor%}
+
+
+        {%endblock userhome%}

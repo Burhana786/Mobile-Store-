@@ -1,0 +1,27 @@
+{%extends 'uhome.html'%}
+{%block userhome%}
+
+<h2 class="bg-transparent text-dark text-center">Order</h2><br><br>
+
+
+<div class="row">
+  
+      <div class="card-bg-transparent" style="width:400px">
+        <img class="card-img-top" width="250" src="{{data.product.select_image.url}}" alt="product-images">
+        <div class="card-body-bg-transparent">
+          <h4 class="card-title"><b>Product Name</b> : {{data.product.product_name}}</h4>
+          <p class="text"><b>Product ID</b> : {{data.product.id}}</p>
+          <div class="text"><b>Price</b> : {{data.product.price}}</div>
+          <form action="" method="post">
+            {%csrf_token%}
+            <label for="">Quantity</label>
+            <input type="number" class="form-control" name="qty" required placeholder="Enter Quantity" value="1">
+          </form>
+          <div class="card-footer"><a href="" class="btn btn-success">Confirm</a></div>
+          
+        </div> 
+      </div> 
+      
+
+{%endblock userhome%}  
+

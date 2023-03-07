@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{%block index%}
+<h1 class="bg-transparent text-dark text-center">Mobile Tunes</h1>
+<div id="img">     
+  <img src="https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149699853.jpg?w=2000" style="width:450px;height:450px">
+</div>
+<style>
+  img{
+    border:3px solid;
+    display: block;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50%;
+  }
+</style>
+<br>
+
+
+{% if messages %}
+    {% for msg in messages %}
+      {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>{{msg}}</strong>
+        </div>
+      {%endif%}
+      {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>{{msg}}</strong>
+        </div>
+      {%endif%}
+    {% endfor %}
+  {% endif %}
+      <!-- <a href="{%url 'reg'%}">Registration</a> -->
+      
+{%endblock index%}

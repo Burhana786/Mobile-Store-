@@ -1,0 +1,15 @@
+{%extends 'shome.html'%}
+{%block shome%}
+<!-- <div class="col-6"> -->
+    <!-- <button data-toggle="collapse" class="btn btn-primary btn-block mt-3" data-target="#demo">Add Products</button> -->
+    <!-- <div id="demo" class="collapse jumbotron"> -->
+        <h1 class="bg-transparent text-dark text-center">Product Details</h1>
+
+      <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <p class="text-center"><button class="btn btn-success">Upload</button></p>
+      </form>
+    <!-- </div> -->
+  <!-- </div> -->
+  {%endblock shome%}
